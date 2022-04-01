@@ -39,7 +39,6 @@ class LoginController extends GetxController {
   get submitForm => isUsernameValid && isPasswordValid ? login : setShowErrors;
 
   Future<void> login() async {
-    final response =
-        await repository.login(username: username, password: password);
+    await repository.login(username: username, password: password);
   }
 }
