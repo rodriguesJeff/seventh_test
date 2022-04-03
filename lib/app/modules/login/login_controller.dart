@@ -15,7 +15,7 @@ class LoginController extends GetxController {
   }
 
   String? get usernameErrorMessage {
-    if (isUsernameValid) return null;
+    if (isUsernameValid || !showErrors) return null;
     return 'Usuário inválido';
   }
 
@@ -28,15 +28,17 @@ class LoginController extends GetxController {
   }
 
   String? get passwordErrorMessage {
-    if (isPasswordValid && !showErrors) return null;
+    if (isPasswordValid || !showErrors) return null;
     return 'Senha inválida';
   }
 
+  bool get isFormValid => isUsernameValid && isPasswordValid;
+
   bool showErrors = false;
 
-  void setShowErrors() => showErrors = true;
+  void setShowErrors(bool value) => showErrors = value;
 
-  get submitForm => isUsernameValid && isPasswordValid ? login : setShowErrors;
+  get submitForm => isFormValid ? login : setShowErrors(true);
 
   Future<void> login() async {
     await repository.login(username: username, password: password);

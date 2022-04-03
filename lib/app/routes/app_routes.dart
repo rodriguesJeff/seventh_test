@@ -1,10 +1,7 @@
-import 'package:get/get.dart';
-import 'package:seventh_test/app/modules/login/login_screen.dart';
-import 'package:seventh_test/app/modules/splash/splash_screen.dart';
+part of 'app_pages.dart';
 
-class AppRoutes {
-  static final routes = [
-    GetPage(name: '/', page: () => const SplashScreen()),
-    GetPage(name: '/', page: () => const LoginScreen()),
-  ];
+abstract class Routes {
+  static const initial = '/initial';
+  static const home = '/home';
+  static const login = '/login';
 }
