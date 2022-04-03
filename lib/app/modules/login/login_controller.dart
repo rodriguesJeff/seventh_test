@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:seventh_test/app/modules/login/login_repository.dart';
+import 'package:seventh_test/app/routes/app_pages.dart';
 
 class LoginController extends GetxController {
   LoginController({required this.repository});
@@ -41,6 +43,12 @@ class LoginController extends GetxController {
   get submitForm => isFormValid ? login : setShowErrors(true);
 
   Future<void> login() async {
-    await repository.login(username: username, password: password);
+    final response =
+        await repository.login(username: username, password: password);
+    if (response != null) {
+      final box = GetStorage();
+      box.write('token', response);
+      Get.toNamed(Routes.home);
+    }
   }
 }

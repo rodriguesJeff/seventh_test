@@ -19,7 +19,7 @@ class LoginRepository {
           'password': password,
         },
       );
-      return response.data.token;
+      return response.data['token'];
     } catch (e) {
       debugPrint("Error on request $e");
     }
