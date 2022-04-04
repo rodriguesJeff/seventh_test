@@ -1,16 +1,21 @@
 # seventh_test
 
-A new Flutter project.
+App feito para teste da Seventh
 
-## Getting Started
+# Texnologias utilizadas
 
-This project is a starting point for a Flutter application.
+## State Manager
+GetX 4.6.1
 
-A few resources to get you started if this is your first Flutter project:
+## Armazenamento local
+GetStorage 2.0.3
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Consumo de API's
+Dio 4.0.6
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Reprodutores de video
+VideoPlayer 2.3.0
+Chewie 1.3.1
+
+## Versão do Flutter 
+2.16.1
