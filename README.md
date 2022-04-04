@@ -2,7 +2,7 @@
 
 App feito para teste da Seventh
 
-# Texnologias utilizadas
+# Tecnologias utilizadas
 
 ## State Manager
 GetX 4.6.1
