@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         });
       chewieController = ChewieController(
         videoPlayerController: _controller,
-        aspectRatio: _controller.value.aspectRatio,
+        aspectRatio: 3 / 2,
         autoPlay: true,
         looping: true,
       );
@@ -54,16 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 50),
-              const Text(
-                'Bem vindo ao nosso sistema de segurança',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-              ),
-              const SizedBox(height: 50),
               Container(
-                padding: const EdgeInsets.all(8),
                 child: isLoading
                     ? const CircularProgressIndicator()
                     : _controller.value.isInitialized
